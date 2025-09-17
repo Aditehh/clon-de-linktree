@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
     return (
-        <nav className='bg-white flex fixed justify-between p-4 w-[80vw] top-10 right-[10vw] rounded-full '>
+        <nav className='bg-white flex fixed justify-between p-2 w-[80vw] top-10 right-[10vw] rounded-full '>
             <div className="cursor-pointer text-3xl logo font-bold flex gap-20 items-center">
                 LinkTree
 
