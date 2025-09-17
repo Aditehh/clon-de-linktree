@@ -6,7 +6,7 @@ const generate = () => {
 
 
             <div className="col1 flex items-center justify-center flex-col">
-                <h1>Create Your Link.</h1>
+                <h1 className='font-bold text-6xl'>Create Your Link.</h1>
                 <div className='flex flex-col gap-5'>
                     <input className='bg-white' type="text" placeholder='Enter link text' />
                     <input className='bg-white' type="text" placeholder='Enter link ' />
