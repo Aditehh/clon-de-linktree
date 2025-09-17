@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
               placeholder="linktr.ee/your-url"
             />
             <button className="cursor-pointer bg-pink-200 rounded-full py-4 px-6 font-bold">
-              Claim your Link.
+              <Link href={"/generate"}>Claim your Link.</Link>
             </button>
           </div>
 

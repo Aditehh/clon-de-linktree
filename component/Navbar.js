@@ -1,10 +1,11 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Navbar = () => {
     return (
         <nav className='bg-white flex fixed justify-between p-2 w-[80vw] top-10 right-[10vw] rounded-full '>
             <div className="cursor-pointer px-5 text-3xl logo font-bold flex gap-20 items-center">
-                LINK.
+                <Link href={"/"}>Link.</Link>
 
                 <ul className=' flex text-lg font-normal gap-7'>
                     <li>Templates</li>
