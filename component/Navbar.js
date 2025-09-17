@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar = () => {
     return (
         <nav className='bg-white flex fixed justify-between p-2 w-[80vw] top-10 right-[10vw] rounded-full '>
-            <div className="cursor-pointer text-3xl logo font-bold flex gap-20 items-center">
+            <div className="cursor-pointer px-2 text-3xl logo font-bold flex gap-20 items-center">
                 LinkTree
 
                 <ul className=' flex text-lg font-normal gap-7'>
