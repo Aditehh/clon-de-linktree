@@ -2,29 +2,43 @@ import React from 'react'
 
 const generate = () => {
     return (
-        <div className='bg-[#225ac0] min-h-screen grid grid-cols-2'>
+        <div className='bg-[#225ac0] text-yellow-300 min-h-screen grid grid-cols-2'>
 
 
-            {/* <div className="col1 flex items-center justify-center flex-col">
-                <h1 className='font-bold text-6xl my-9'>Create Your Link.</h1>
+            <div className="col1 flex items-center justify-center flex-col">
+                <h1 className='font-bold text-4xl my-9'>Create Your Link.</h1>
                 <div className='flex flex-col gap-5'>
-                    <h1 className='font-bold text-xl'>Claim your Handle</h1>
-                    <input className='px-4 py-2 focus:outline-black bg-gray-200 rounded' type="text" placeholder='Choose a handle' />
+                    <h2 className='font-bold text-xl'>Claim your Handle</h2>
+                    <div className='mx-4'>
 
-                    <h1 className='font-bold text-xl'>Enter link text</h1>
+                        <input className='text-black px-4 w-64 py-2 focus:outline-black bg-gray-200 rounded' type="text" placeholder='Choose a handle' />
 
-                    <input className='px-4 py-2 focus:outline-black bg-gray-200 rounded' type="text" placeholder='Enter link text' />
+                    </div>
 
-                    <h1 className='font-bold text-xl'>Enter link</h1>
+                    <h2 className='font-bold text-xl'>Enter links</h2>
 
-                    <input className='px-4 py-2 focus:outline-black bg-gray-200 rounded' type="text" placeholder='Enter link ' />
+                    <div className='mx-4 flex gap-5'>
+
+                        <input className='px-4 py-2 focus:outline-black bg-gray-200 rounded text-black' type="text" placeholder='Enter link text' />
+
+                        <input className='px-4 text-black py-2 focus:outline-black bg-gray-200 rounded' type="text" placeholder='Enter link ' />
+
+                        <button className='bg-black'>
+                            Add Link.
+                        </button>
+
+                    </div>
+
+                    <h2 className='font-bold text-xl'>Add a profile picture</h2>
+
+
                 </div>
 
 
-            </div> */}
+            </div>
 
 
-            <div className="col1 flex items-center justify-center flex-col p-10">
+            {/* <div className="col1 flex items-center justify-center flex-col p-10">
                 <h1 className="font-bold text-6xl mb-12">Create Your Link.</h1>
 
                 <div className="flex flex-col gap-8 w-full max-w-md">
@@ -56,7 +70,7 @@ const generate = () => {
                         
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
 
