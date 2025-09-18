@@ -7,9 +7,12 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const generate = () => {
 
-    const [link, setlink] = useState("")
+    // const [link, setlink] = useState("")
+    // const [linktext, setlinktext] = useState("")
+
+    const [links, setlinks] = useState([{links: "", linktext: ""}])
+
     const [handle, sethandle] = useState("")
-    const [linktext, setlinktext] = useState("")
     const [pic, setpic] = useState("")
 
     const addLink = async (text, link, handle) => {
@@ -32,6 +35,9 @@ const generate = () => {
         const r = await fetch("http://localhost:3000/api/add", requestOptions)
         const result = await r.json();
         toast(result.message)
+        // setlink("")
+        // setlinktext("")
+        // sethandle("")
 
     }
 
