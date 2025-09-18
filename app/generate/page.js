@@ -1,10 +1,42 @@
+"use client"
 import React from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const generate = () => {
+
+    const [link, setlink] = useState("")
+    const [linktext, setlinktext] = useState("")
+
+    const addLink = async (text, link, handle) => {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            "link": link,
+            "linktext": text,
+            "handle": handle
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow"
+        };
+
+        const r = await fetch("http://localhost:3000/api/add", requestOptions)
+        const result = await r.json();
+        toast(r.message)
+
+    }
+
+
+
     return (
         <div className='bg-[#225ac0] text-yellow-200 min-h-screen grid grid-cols-2'>
 
-
+            <ToastContainer />
             <div className="col1 flex items-center justify-center flex-col">
                 <h1 className='font-bold text-4xl my-9'>Create Your Link.</h1>
                 <div className='flex flex-col gap-5'>
@@ -34,9 +66,9 @@ const generate = () => {
                     <div className='mx-4 gap-5 flex flex-col'>
 
 
-                    <input className='px-4 text-black py-2 w-fit focus:outline-black bg-gray-200 rounded' type="text" placeholder='Enter link ' />
+                        <input className='px-4 text-black py-2 w-fit focus:outline-black bg-gray-200 rounded' type="text" placeholder='Enter link ' />
 
-                    <button className='bg-yellow-200 px-5 py-2 w-fit cursor-pointer rounded-4xl text-black font-semibold'>
+                        <button className='bg-yellow-200 px-5 py-2 w-fit cursor-pointer rounded-4xl text-black font-semibold'>
                             Create Link.
                         </button>
 
