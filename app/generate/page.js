@@ -54,7 +54,12 @@ const generate = () => {
 
         const r = await fetch("http://localhost:3000/api/add", requestOptions)
         const result = await r.json();
-        toast(result.message)
+        if (result.success) {
+            toast.success(result.message)
+        }
+        else {
+            toast.error(result.message)
+        }
         // setlink("")
         // setlinktext("")
         // sethandle("")
@@ -84,7 +89,7 @@ const generate = () => {
                         return <div key={index} className='mx-4 flex gap-5'>
 
                             <input
-                                value={item.linktext || ""} onChange={e => { handlechange(index,item.link, e.target.value) }}
+                                value={item.linktext || ""} onChange={e => { handlechange(index, item.link, e.target.value) }}
                                 className='px-4 py-2 focus:outline-black bg-gray-200 rounded text-black' type="text" placeholder='Enter link text' />
 
                             <input
