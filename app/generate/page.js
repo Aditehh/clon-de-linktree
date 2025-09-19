@@ -30,7 +30,6 @@ const generate = () => {
     // const [linktext, setlinktext] = useState("")
 
     const [links, setlinks] = useState([{ link: "", linktext: "" }])
-
     const [handle, sethandle] = useState("")
     const [pic, setpic] = useState("")
 
@@ -56,6 +55,9 @@ const generate = () => {
         const result = await r.json();
         if (result.success) {
             toast.success(result.message)
+            setlinks([])
+            sethandle("")
+            setpic("")
         }
         else {
             toast.error(result.message)
@@ -117,8 +119,9 @@ const generate = () => {
                             className='px-4 text-black py-2 w-fit focus:outline-black bg-gray-200 rounded' type="text" placeholder='Enter Picture ' />
 
                         <button
+                        disabled={pic=="" || handle =="" || links[0].linktext==""}
                             onClick={submitLinks}
-                            className='bg-yellow-200 px-5 py-2 w-fit cursor-pointer rounded-4xl text-black font-semibold'>
+                            className='disabled:bg-gray-500 bg-yellow-200 px-5 py-2 w-fit cursor-pointer rounded-4xl text-black font-semibold'>
                             Create Link.
                         </button>
 
