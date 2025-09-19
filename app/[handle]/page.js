@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default async function Page({ params }) {
     const handle = (await params).handle
     const item = {
@@ -23,9 +25,20 @@ export default async function Page({ params }) {
             "pic": "https://upload.wikimedia.org/wikipedia/commons/2/27/Lionel_Messi_NE_Revolution_Inter_Miami_7.9.25-178.jpg"
         }
     }
-    return <div className="flex min-h-screen bg-purple-400 justify-center items-center">
+    return <div className="flex min-h-screen bg-purple-400 justify-center items-start">
         <div className="photo flex justify-center flex-col items-center">
-            <img className="h-50" src={item.body.pic} alt="item" /></div>
-            <span className="font-bold">@{item.body.handle}</span>
+            <img className="h-50" src={item.body.pic} alt="item" />
+            <div className="font-bold">@{item.body.handle}</div>
+            <div className="links">
+                {item.body.links.map((item,index)=> {
+                    return <div className="flex min-w-3 shadow-lg my-3 py-4 px-2 rounded-md gap-5 bg-amber-300" key={index}>
+                        <div>
+                            <Link href={item.link}> {item.linktext} </Link>
+                            </div>
+                    </div>
+
+                })}
+            </div>
+        </div>
     </div>
 }
